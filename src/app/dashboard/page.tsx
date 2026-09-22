@@ -38,6 +38,7 @@ export default function DashboardOverviewPage() {
           delta={`${filledCount} filled executions`}
           deltaTone={totalPnl >= 0 ? "positive" : "negative"}
           icon={Wallet}
+          elevated
         />
         <StatTile
           label="AI audit GO rate"

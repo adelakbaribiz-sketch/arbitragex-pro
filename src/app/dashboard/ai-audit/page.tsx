@@ -23,7 +23,7 @@ export default function AiAuditPage() {
         description="Monitor → Auditor → Executor: every opportunity is evaluated net of fees, slippage, withdrawal risk, and latency decay before execution."
         action={
           <label className="flex items-center gap-2 text-xs text-fg-muted">
-            <input type="checkbox" checked={onlyGo} onChange={(e) => setOnlyGo(e.target.checked)} className="accent-[#d6a94b]" />
+            <input type="checkbox" checked={onlyGo} onChange={(e) => setOnlyGo(e.target.checked)} />
             GO decisions only
           </label>
         }
@@ -40,7 +40,10 @@ export default function AiAuditPage() {
       ) : (
         <div className="space-y-3">
           {filtered.map((a) => (
-            <Card key={a.id} className="p-4">
+            <Card
+              key={a.id}
+              className={cn("border-l-2 p-4", a.verdict === "GO" ? "border-l-positive" : "border-l-border")}
+            >
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <div className="flex items-center gap-3">
                   <AuditVerdictBadge verdict={a.verdict} />

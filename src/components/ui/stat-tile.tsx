@@ -7,6 +7,7 @@ export function StatTile({
   delta,
   deltaTone = "neutral",
   icon: Icon,
+  elevated = false,
   className,
 }: {
   label: string;
@@ -14,10 +15,18 @@ export function StatTile({
   delta?: string;
   deltaTone?: "positive" | "negative" | "neutral";
   icon?: LucideIcon;
+  /** Reserve for the single primary KPI on a screen — not a default. */
+  elevated?: boolean;
   className?: string;
 }) {
   return (
-    <div className={cn("rounded-lg border border-border bg-surface p-4", className)}>
+    <div
+      className={cn(
+        "rounded-lg border border-border bg-surface p-4",
+        elevated && "border-accent/30 bg-gradient-to-b from-surface-raised to-surface shadow-[var(--shadow-glow-accent)]",
+        className,
+      )}
+    >
       <div className="flex items-center justify-between">
         <span className="text-xs font-medium uppercase tracking-wide text-fg-muted">{label}</span>
         {Icon ? <Icon className="h-4 w-4 text-fg-subtle" /> : null}
