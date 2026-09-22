@@ -40,6 +40,18 @@ delivery.
 - Unrealistic GO-rate (2%) from an initial threshold choice — rebalanced
   per above
 
+## PASSED — Upgrade pass (see docs/UPGRADE-REPORT.md)
+
+- `npm run build` — clean, same 19-route split as before
+- `npm run lint` — 0 errors, 0 warnings
+- Manual browser verification: landing hero primary-button lift, dashboard
+  overview elevated KPI tile, AI Audit GO/NO-GO left-border accent, Portfolio
+  chart still renders correctly via `next/dynamic`
+- Mobile (375px) re-check on Overview — no overflow, elevated tile reads
+  correctly at narrow width
+- Console errors: none
+- `npm run build`/`lint` both run with zero new dependencies added
+
 ## REMAINING / not done
 
 - **No automated tests** (no Jest/Vitest/Playwright suite). For a portfolio
