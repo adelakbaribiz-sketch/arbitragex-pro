@@ -36,8 +36,8 @@ export default function StrategyPage() {
           </CardHeader>
           <CardContent className="space-y-5">
             <div>
-              <label className="mb-2 block text-xs font-medium text-fg-muted">Tracked symbols</label>
-              <div className="flex flex-wrap gap-2">
+              <p className="mb-2 text-xs font-medium text-fg-muted" id="strategy-symbols-label">Tracked symbols</p>
+              <div className="flex flex-wrap gap-2" role="group" aria-labelledby="strategy-symbols-label">
                 {symbols.map((s) => (
                   <button
                     key={s}
@@ -55,11 +55,11 @@ export default function StrategyPage() {
               </div>
             </div>
             <div>
-              <label className="mb-2 flex justify-between text-xs font-medium text-fg-muted">
+              <label htmlFor="strategy-min-spread" className="mb-2 flex justify-between text-xs font-medium text-fg-muted">
                 <span>Minimum net spread</span>
                 <span className="font-mono text-accent">{minSpread.toFixed(2)}%</span>
               </label>
-              <input type="range" min={0.05} max={0.5} step={0.01} value={minSpread} onChange={(e) => setMinSpread(Number(e.target.value))} className="w-full accent-[#d6a94b]" />
+              <input id="strategy-min-spread" type="range" min={0.05} max={0.5} step={0.01} value={minSpread} onChange={(e) => setMinSpread(Number(e.target.value))} className="w-full" />
               <p className="mt-1 text-[11px] text-fg-subtle">Opportunities below this net-of-fees threshold are rejected by the AI auditor.</p>
             </div>
           </CardContent>
@@ -71,25 +71,25 @@ export default function StrategyPage() {
           </CardHeader>
           <CardContent className="space-y-5">
             <div>
-              <label className="mb-2 flex justify-between text-xs font-medium text-fg-muted">
+              <label htmlFor="strategy-position-size" className="mb-2 flex justify-between text-xs font-medium text-fg-muted">
                 <span>Position size per trade</span>
                 <span className="font-mono text-accent">${positionSize.toLocaleString()}</span>
               </label>
-              <input type="range" min={500} max={50000} step={500} value={positionSize} onChange={(e) => setPositionSize(Number(e.target.value))} className="w-full accent-[#d6a94b]" />
+              <input id="strategy-position-size" type="range" min={500} max={50000} step={500} value={positionSize} onChange={(e) => setPositionSize(Number(e.target.value))} className="w-full" />
             </div>
             <div>
-              <label className="mb-2 flex justify-between text-xs font-medium text-fg-muted">
+              <label htmlFor="strategy-max-concurrent" className="mb-2 flex justify-between text-xs font-medium text-fg-muted">
                 <span>Max concurrent positions</span>
                 <span className="font-mono text-accent">{maxConcurrent}</span>
               </label>
-              <input type="range" min={1} max={20} step={1} value={maxConcurrent} onChange={(e) => setMaxConcurrent(Number(e.target.value))} className="w-full accent-[#d6a94b]" />
+              <input id="strategy-max-concurrent" type="range" min={1} max={20} step={1} value={maxConcurrent} onChange={(e) => setMaxConcurrent(Number(e.target.value))} className="w-full" />
             </div>
             <div>
-              <label className="mb-2 flex justify-between text-xs font-medium text-fg-muted">
+              <label htmlFor="strategy-max-daily-loss" className="mb-2 flex justify-between text-xs font-medium text-fg-muted">
                 <span>Max daily loss (circuit breaker)</span>
                 <span className="font-mono text-accent">${maxDailyLossUsd.toLocaleString()}</span>
               </label>
-              <input type="range" min={200} max={20000} step={200} value={maxDailyLossUsd} onChange={(e) => setMaxDailyLossUsd(Number(e.target.value))} className="w-full accent-[#d6a94b]" />
+              <input id="strategy-max-daily-loss" type="range" min={200} max={20000} step={200} value={maxDailyLossUsd} onChange={(e) => setMaxDailyLossUsd(Number(e.target.value))} className="w-full" />
               <p className="mt-1 text-[11px] text-fg-subtle">Trading halts automatically for the day once realized losses cross this limit.</p>
             </div>
           </CardContent>

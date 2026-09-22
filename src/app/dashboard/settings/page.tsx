@@ -34,17 +34,19 @@ export default function SettingsPage() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
-              <label className="mb-1 block text-xs font-medium text-fg-muted">Email</label>
+              <label htmlFor="settings-email" className="mb-1 block text-xs font-medium text-fg-muted">Email</label>
               <input
+                id="settings-email"
                 readOnly
                 value={email ?? "demo@arbitragex.pro"}
                 className="w-full cursor-not-allowed rounded-md border border-border bg-surface-raised px-3 py-2 text-sm text-fg-muted"
               />
             </div>
             <div>
-              <label className="mb-1 block text-xs font-medium text-fg-muted">Platform API key</label>
+              <label htmlFor="settings-api-key" className="mb-1 block text-xs font-medium text-fg-muted">Platform API key</label>
               <div className="flex items-center gap-2">
                 <input
+                  id="settings-api-key"
                   readOnly
                   value="axp_live_••••••••••••3f21"
                   className="w-full cursor-not-allowed rounded-md border border-border bg-surface-raised px-3 py-2 font-mono text-sm text-fg-muted"
@@ -71,7 +73,7 @@ export default function SettingsPage() {
                   type="checkbox"
                   checked={enabled[c.id]}
                   onChange={(e) => setEnabled((s) => ({ ...s, [c.id]: e.target.checked }))}
-                  className="mt-0.5 accent-[#d6a94b]"
+                  className="mt-0.5"
                 />
               </label>
             ))}

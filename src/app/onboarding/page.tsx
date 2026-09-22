@@ -108,8 +108,8 @@ export default function OnboardingPage() {
 
               <div className="mt-5 space-y-5">
                 <div>
-                  <label className="mb-2 block text-xs font-medium text-fg-muted">Symbols</label>
-                  <div className="flex flex-wrap gap-2">
+                  <p className="mb-2 text-xs font-medium text-fg-muted" id="onboarding-symbols-label">Symbols</p>
+                  <div className="flex flex-wrap gap-2" role="group" aria-labelledby="onboarding-symbols-label">
                     {symbols.map((s) => (
                       <button
                         key={s}
@@ -128,34 +128,36 @@ export default function OnboardingPage() {
                 </div>
 
                 <div>
-                  <label className="mb-2 flex justify-between text-xs font-medium text-fg-muted">
+                  <label htmlFor="onboarding-min-spread" className="mb-2 flex justify-between text-xs font-medium text-fg-muted">
                     <span>Minimum net spread</span>
                     <span className="font-mono text-accent">{minSpread.toFixed(2)}%</span>
                   </label>
                   <input
+                    id="onboarding-min-spread"
                     type="range"
                     min={0.05}
                     max={0.5}
                     step={0.01}
                     value={minSpread}
                     onChange={(e) => setMinSpread(Number(e.target.value))}
-                    className="w-full accent-[#d6a94b]"
+                    className="w-full"
                   />
                 </div>
 
                 <div>
-                  <label className="mb-2 flex justify-between text-xs font-medium text-fg-muted">
+                  <label htmlFor="onboarding-position-size" className="mb-2 flex justify-between text-xs font-medium text-fg-muted">
                     <span>Position size per trade</span>
                     <span className="font-mono text-accent">${positionSize.toLocaleString()}</span>
                   </label>
                   <input
+                    id="onboarding-position-size"
                     type="range"
                     min={500}
                     max={50000}
                     step={500}
                     value={positionSize}
                     onChange={(e) => setPositionSize(Number(e.target.value))}
-                    className="w-full accent-[#d6a94b]"
+                    className="w-full"
                   />
                 </div>
               </div>

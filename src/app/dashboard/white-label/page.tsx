@@ -36,30 +36,32 @@ export default function WhiteLabelPage() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
-              <label className="mb-1 block text-xs font-medium text-fg-muted">Brand name</label>
+              <label htmlFor="wl-brand-name" className="mb-1 block text-xs font-medium text-fg-muted">Brand name</label>
               <input
+                id="wl-brand-name"
                 value={brandName}
                 onChange={(e) => setBrandName(e.target.value)}
                 className="w-full rounded-md border border-border bg-surface-raised px-3 py-2 text-sm text-fg outline-none focus:border-accent/50"
               />
             </div>
             <div>
-              <label className="mb-1 block text-xs font-medium text-fg-muted">Custom domain</label>
+              <label htmlFor="wl-domain" className="mb-1 block text-xs font-medium text-fg-muted">Custom domain</label>
               <input
+                id="wl-domain"
                 value={domain}
                 onChange={(e) => setDomain(e.target.value)}
                 className="w-full rounded-md border border-border bg-surface-raised px-3 py-2 font-mono text-sm text-fg outline-none focus:border-accent/50"
               />
             </div>
             <div>
-              <label className="mb-1 block text-xs font-medium text-fg-muted">Accent color</label>
+              <label htmlFor="wl-accent" className="mb-1 block text-xs font-medium text-fg-muted">Accent color</label>
               <div className="flex items-center gap-2">
-                <input type="color" value={accent} onChange={(e) => setAccent(e.target.value)} className="h-9 w-9 rounded border border-border bg-transparent" />
+                <input id="wl-accent" type="color" value={accent} onChange={(e) => setAccent(e.target.value)} className="h-9 w-9 rounded border border-border bg-transparent" />
                 <span className="font-mono text-xs text-fg-muted">{accent}</span>
               </div>
             </div>
             <div>
-              <label className="mb-1 block text-xs font-medium text-fg-muted">Logo</label>
+              <p className="mb-1 text-xs font-medium text-fg-muted">Logo</p>
               <button className="flex w-full items-center justify-center gap-2 rounded-md border border-dashed border-border py-6 text-xs text-fg-muted hover:border-border-strong">
                 <Upload className="h-4 w-4" /> Upload logo (demo — not stored)
               </button>
