@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { Wallet } from "lucide-react";
 import { PageHeader } from "@/components/layout/page-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,7 +10,14 @@ import { StatTile } from "@/components/ui/stat-tile";
 import { usePortfolio } from "@/lib/hooks/use-demo-data";
 import { exchangeById } from "@/lib/mock/exchanges";
 import { formatUsd } from "@/lib/utils";
-import { PnlChart } from "@/components/charts/pnl-chart";
+
+// lightweight-charts renders to a canvas and has no server-rendered output,
+// so it's loaded client-side only, on-demand, kept out of every other
+// dashboard route's bundle.
+const PnlChart = dynamic(() => import("@/components/charts/pnl-chart").then((m) => m.PnlChart), {
+  ssr: false,
+  loading: () => <Skeleton className="h-64 w-full" />,
+});
 
 export default function PortfolioPage() {
   const { data, isLoading } = usePortfolio();
