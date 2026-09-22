@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #0a0b0d;
+  --color-surface: #121418;
+  --color-surface-raised: #181b20;
+  --color-border: #262a31;
+  --color-border-strong: #363b44;
+  --color-fg: #e9ebee;
+  --color-fg-muted: #8b93a1;
+  --color-fg-subtle: #5b626e;
+
+  --color-accent: #d6a94b;
+  --color-accent-foreground: #14120a;
+  --color-positive: #3fb68b;
+  --color-negative: #e5636a;
+  --color-info: #5b8def;
+
+  --font-ui: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-data: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+
+/* This product is dark-mode-first by design (a trading-terminal aesthetic),
+   not a light/dark toggle of the same layout, so we do not branch on
+   prefers-color-scheme here. */
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-surface-raised: var(--color-surface-raised);
+  --color-border: var(--color-border);
+  --color-border-strong: var(--color-border-strong);
+  --color-fg: var(--color-fg);
+  --color-fg-muted: var(--color-fg-muted);
+  --color-fg-subtle: var(--color-fg-subtle);
+  --color-accent: var(--color-accent);
+  --color-accent-foreground: var(--color-accent-foreground);
+  --color-positive: var(--color-positive);
+  --color-negative: var(--color-negative);
+  --color-info: var(--color-info);
+  --font-sans: var(--font-ui);
+  --font-mono: var(--font-data);
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-ui);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-accent) 35%, transparent);
+  color: var(--color-fg);
+}
+
+/* Thin, terminal-style scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-strong) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 4px;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.animate-pulse-dot {
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
