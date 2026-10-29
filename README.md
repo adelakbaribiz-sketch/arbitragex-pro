@@ -11,6 +11,8 @@ REAL / MOCKED / SIMULATED / PROPOSED breakdown before relying on anything here.
 ![Next.js](https://img.shields.io/badge/Next.js-16-black)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
+![Dashboard overview — live spread monitor, AI audit decisions and system health](docs/screenshots/dashboard.png)
+
 ## Problem
 
 Crypto prices diverge across 100+ centralized and 25+ decentralized exchanges.
@@ -53,11 +55,13 @@ without touching the UI.
 
 ## Screenshots
 
-| Landing | Dashboard overview | AI Audit |
-|---|---|---|
-| Hero, feature grid, pricing | Live spread monitor, system health, stat tiles | GO/NO-GO verdicts with factor breakdown |
+| Landing page | AI audit panel |
+|---|---|
+| ![Landing page](docs/screenshots/landing.png) | ![AI audit — GO/NO-GO verdicts with fee, slippage, withdrawal-risk and latency breakdown](docs/screenshots/ai-audit.png) |
+| **Opportunities** | **Portfolio** |
+| ![Detected opportunities with venue routing and net-of-fee spread](docs/screenshots/opportunities.png) | ![Portfolio — balances per venue and 30-day simulated equity curve](docs/screenshots/portfolio.png) |
 
-*(Run the app locally with the steps below to see it live — see [`docs/DEMO.md`](docs/DEMO.md) for a guided walkthrough.)*
+*Captured from the demo running locally (`npm run build && npm start`) and signed in with the demo account. Every number on screen comes from the deterministic simulated dataset — not from real exchanges or real trades. See [`docs/DEMO.md`](docs/DEMO.md) for a guided walkthrough.*
 
 ## Architecture
 
