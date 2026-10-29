@@ -1,5 +1,7 @@
 # ArbitrageX Pro
 
+**Cross-exchange crypto arbitrage gated by an AI risk audit: a trade is cleared only when it is profitable net of fees, slippage, withdrawal risk and latency — not on raw spread.**
+
 **Status: Concept-stage portfolio demo.** A working Next.js product demo of a
 cross-exchange crypto arbitrage SaaS platform — polished frontend, a
 deterministic simulated data layer, and full product documentation. There is
@@ -60,6 +62,10 @@ without touching the UI.
 | ![Landing page](docs/screenshots/landing.png) | ![AI audit — GO/NO-GO verdicts with fee, slippage, withdrawal-risk and latency breakdown](docs/screenshots/ai-audit.png) |
 | **Opportunities** | **Portfolio** |
 | ![Detected opportunities with venue routing and net-of-fee spread](docs/screenshots/opportunities.png) | ![Portfolio — balances per venue and 30-day simulated equity curve](docs/screenshots/portfolio.png) |
+
+| Mobile | 
+|---|
+| <img src="docs/screenshots/mobile.png" alt="Dashboard overview on a phone-sized screen" width="260"> |
 
 *Captured from the demo running locally (`npm run build && npm start`) and signed in with the demo account. Every number on screen comes from the deterministic simulated dataset — not from real exchanges or real trades. See [`docs/DEMO.md`](docs/DEMO.md) for a guided walkthrough.*
 
