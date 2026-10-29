@@ -63,9 +63,11 @@ without touching the UI.
 | **Opportunities** | **Portfolio** |
 | ![Detected opportunities with venue routing and net-of-fee spread](docs/screenshots/opportunities.png) | ![Portfolio — balances per venue and 30-day simulated equity curve](docs/screenshots/portfolio.png) |
 
-| Mobile | 
-|---|
-| <img src="docs/screenshots/mobile.png" alt="Dashboard overview on a phone-sized screen" width="260"> |
+<p>
+  <img src="docs/screenshots/mobile.png" alt="Dashboard overview on a phone-sized screen" width="260">
+</p>
+
+*Phone-sized screen (390 px wide).*
 
 *Captured from the demo running locally (`npm run build && npm start`) and signed in with the demo account. Every number on screen comes from the deterministic simulated dataset — not from real exchanges or real trades. See [`docs/DEMO.md`](docs/DEMO.md) for a guided walkthrough.*
 
